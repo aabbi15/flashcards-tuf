@@ -1,10 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function FlipCard() {
+let data =[];
+let card;
+
+
+export default function FlipCard({card}) {
     const [isFlipped, setIsFlipped] = useState(false);
+    
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
@@ -12,7 +17,7 @@ export default function FlipCard() {
 
     function mybutt() {
 
-        /* From Uiverse.io by AKAspidey01 */
+        
 
         return(
             <button onClick={handleFlip} className="bg-slate-950 p-1 rounded-full" >
@@ -23,18 +28,31 @@ export default function FlipCard() {
 
     }
 
+    
+
+   
+
+    
+    
+
+   
+
+    
+
+   
+
     return (
         <div className="flip-card" >
 
             <div className={`flip-card-inner  ${isFlipped ? "flipped" : ""}`}>
                 <div className="flip-card-front relative" >
-                    <h2 className="title">Front</h2>
-                    <p>Click to flip</p>
+                    {/* <h2 className="title">Front</h2> */}
+                    <p>{card.ques}</p>
                     
                 </div>
                 <div className="flip-card-back">
-                    <h2 className="title">Back</h2>
-                    <p>More details</p>
+                    {/* <h2 className="title">Back</h2> */}
+                    <p>{card.ans}</p>
                 </div>
                 
                 <div className="absolute bottom-0 right-0 px-1">    

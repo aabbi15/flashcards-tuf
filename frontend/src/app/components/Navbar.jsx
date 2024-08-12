@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function Navbar() {
 
     const pathname = usePathname();
-    console.log(pathname);
+    // console.log(pathname);
 
     return (
 
