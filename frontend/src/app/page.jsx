@@ -29,7 +29,9 @@ export default function Home() {
          const temp = await res.json();
         
          console.log(temp);
-         setData(temp.data);
+
+         if(temp.data)
+          setData(temp.data);
         
         setIt(0);
     setLoading(false);
