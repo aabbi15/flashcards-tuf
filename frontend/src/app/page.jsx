@@ -53,6 +53,7 @@ export default function Home() {
 
     console.log("nextclicker"); 
     console.log(data.length);
+
     if (it < data.length-1) {
         setIt(it+1);
         console.log(it);
@@ -84,7 +85,7 @@ function prevclicker() {
 
       <div className="flex items-center justify-center md:mt-28">
      
-        <div className="bg-white md:w- auto py-6 px-4 rounded-lg shadow-lg">
+        <div className="bg-transparent md:w- auto py-6 px-4 rounded-lg shadow-lg">
         {
               loading ? <h1>Loading...</h1> :
               <div>
@@ -98,13 +99,14 @@ function prevclicker() {
            
              <Card1 card={card} />
           </div>
-          <div className="flex items-center justify-between">
-            <button onClick={prevclicker} className="bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-full mt-4">
+          <div className="flex items-center justify-between bg-gray-100 mt-4 rounded-r-full rounded-l-full">
+            <button onClick={prevclicker} className="bg-gray-100 hover:bg-gray-300 active:bg-gray-50 py-2 px-4 rounded-full -4">
 
               <Image src="leftarrow.svg" alt="leftarrow" width={20} height={20} />
             </button>
             
-            <button onClick={nextclicker} className="bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-full mt-4">
+            <div className="text-gray-950 -4"> {it+1}/{data.length} </div>
+            <button onClick={nextclicker} className="bg-gray-100 hover:bg-gray-300 active:bg-gray-50 py-2 px-4 rounded-full -4">
 
               <Image src="rightarrow.svg" alt="leftarrow" width={20} height={20} />
             </button>
