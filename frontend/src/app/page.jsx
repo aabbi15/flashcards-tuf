@@ -87,7 +87,7 @@ function prevclicker() {
      
         <div className="bg-transparent md:w- auto py-6 px-4 rounded-lg shadow-lg">
         {
-              loading ? <h1>Loading...</h1> :
+              loading ? <h1 className="text-white">Loading...</h1> :
               <div>
           <div className="flex items-center justify-center">
             <h1 className="text-2xl font-bold mb-4 text-center">Welcome</h1>
