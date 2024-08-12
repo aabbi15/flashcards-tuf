@@ -1,10 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation'
 
 
 
 export default function Mytable({ }) {
+
+    const router = useRouter();
 
 
 
@@ -14,8 +17,10 @@ export default function Mytable({ }) {
 
     async function  delrow(id) {
 
+        console.log("hidelrwo",id);
+
         const url = "/api/delrow/";
-        const response = await fetch({url}, {
+        const response = await fetch(url, {
             method: "post",
             headers: {
               'Accept': 'application/json',
@@ -27,15 +32,22 @@ export default function Mytable({ }) {
               id:id
             })
           });
+
+          setData(data.filter((card) => card.id !== id));
+
     }
 
     function deleter(id){
+
+        console.log("hideltr",id);
 
         delrow(id);
         console.log("deleted row",id);
     }
 
     function Bin(id) {
+
+        console.log("hi",id);
         return (
             
             <button onClick={() => deleter(id) } class="bin-button">
@@ -105,7 +117,11 @@ export default function Mytable({ }) {
 
 
     return (
+
+        
         <div className="overflow-x-auto  text-white ">
+
+            
             {loading ? <div>Loading...</div> :
                 <table className="min-w-full  mt-2  shadow-md rounded-lg overflow-hidden">
                     <thead className="border-white border">

@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function GET(req) {
 
     try {
-        console.log("req nom", req.body)
+        // console.log("req nom", req.body)
       const result = await excuteQuery('SELECT * FROM cards;');
 
       return NextResponse.json({data:result}, { status: 200 });
