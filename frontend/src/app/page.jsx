@@ -10,7 +10,7 @@ export default function Home() {
 
   const [it, setIt] = useState(0);
 
-  const [cat, setCat] = useState("");
+
 
   
 
@@ -20,7 +20,6 @@ export default function Home() {
 
   const card = data[it];
 
-  // let data = [];
 
   useEffect(() => {
 
@@ -28,10 +27,10 @@ export default function Home() {
 
         const res = await fetch("/api/getdata");
          const temp = await res.json();
-
+        
+         console.log(temp);
          setData(temp.data);
-        //  setData(temp2);
-        // setCard(data[0]);
+        
         setIt(0);
     setLoading(false);
          
