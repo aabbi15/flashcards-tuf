@@ -12,10 +12,33 @@ export default function Mytable({ }) {
 
     const [loading, setLoading] = useState(true);
 
-    function Bin({id}) {
+    async function  delrow(id) {
+
+        const url = "/api/delrow/";
+        const response = await fetch({url}, {
+            method: "post",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+          
+            //make sure to serialize your JSON body
+            body: JSON.stringify({
+              id:id
+            })
+          });
+    }
+
+    function deleter(id){
+
+        delrow(id);
+        console.log("deleted row",id);
+    }
+
+    function Bin(id) {
         return (
             
-            <button class="bin-button">
+            <button onClick={() => deleter(id) } class="bin-button">
                 <svg
                     class="bin-top"
                     viewBox="0 0 39 7"
@@ -78,15 +101,13 @@ export default function Mytable({ }) {
         getData();
 
 
-
-
     }, []);
 
 
     return (
-        <div className="overflow-x-auto ">
+        <div className="overflow-x-auto  text-white ">
             {loading ? <div>Loading...</div> :
-                <table className="min-w-full  text-white mt-2  shadow-md rounded-lg overflow-hidden">
+                <table className="min-w-full  mt-2  shadow-md rounded-lg overflow-hidden">
                     <thead className="border-white border">
                         <tr className="">
                             <th className="px-4 py-2 text-left  border-r font-semibold">Row</th>
