@@ -10,6 +10,21 @@ const db = mysql({
   }
 });
 
+db.connect((err) =>{
+
+       
+
+
+  if(err){
+      console.log(err);
+      return;
+  }
+
+  console.log('Connected to database.');
+  
+
+})
+
 
 export default async function insertRow( data ) {
     
@@ -22,9 +37,11 @@ export default async function insertRow( data ) {
 
    
     const results = await db.query(query);
+   
     await db.end();
-    
     return {results};
+
+    
 
   } catch (error) {
    
