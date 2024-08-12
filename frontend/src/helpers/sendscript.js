@@ -4,17 +4,15 @@
 const mysql = require('mysql2');
 
 
-console.log(process.env.MYSQL_HOST);
+console.log("flashcards.ctiy0skiyuo1.ap-south-1.rds.amazonaws.com");
 const db = mysql.createConnection({
-  host     : process.env.MYSQL_HOST,
-  user     : process.env.MYSQL_USER,
-  password : process.env.MYSQL_PASSWORD,
-  port     : process.env.MYSQL_PORT,
-  database : process.env.MYSQL_DATABASE
+  host     : "flashcards.ctiy0skiyuo1.ap-south-1.rds.amazonaws.com",
+  user     : "aabbi15",
+  password : "Wakanda4ever",
+  port     : "3306",
+  database : "flashcards"
 
 });
-
-
 
 db.connect((err) =>{
 
