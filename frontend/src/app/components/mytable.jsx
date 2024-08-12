@@ -50,9 +50,9 @@ export default function Mytable({ }) {
         console.log("hi",id);
         return (
             
-            <button onClick={() => deleter(id) } class="bin-button">
+            <button onClick={() => deleter(id) } className="bin-button">
                 <svg
-                    class="bin-top"
+                    className="bin-top"
                     viewBox="0 0 39 7"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ export default function Mytable({ }) {
                     ></line>
                 </svg>
                 <svg
-                    class="bin-bottom"
+                    className="bin-bottom"
                     viewBox="0 0 33 39"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
